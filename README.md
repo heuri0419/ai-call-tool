@@ -1,2 +1,5 @@
-# ai-call-mvp-do-not-use
-ai call ui mvp, try for PE, no/low safe treatment for now, not reconmanded
+# 手机网页临时 MVP
+
+这是一个暂时的手机网页测试 MVP，先别当正式项目试。
+
+所有内容库和用户库都会写进浏览器本地存储；导出按钮会导出内容库，并把用户库里的 API key 脱敏。

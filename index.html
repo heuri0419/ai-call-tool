@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Cache MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Mobile Cache MVP</h1>
+          <p id="providerLine">local browser storage</p>
+        </div>
+        <div class="top-actions">
+          <button id="exportButton" class="icon-button" type="button" title="导出">⇩</button>
+          <button id="resetButton" class="icon-button" type="button" title="重载样本">↻</button>
+        </div>
+      </header>
+
+      <section class="config-panel">
+        <details>
+          <summary>user database</summary>
+          <form id="profileForm" class="profile-form">
+            <label>
+              <span>OpenAI API key</span>
+              <input id="apiKeyInput" type="password" autocomplete="off" placeholder="留空保留已有 key" />
+            </label>
+            <label>
+              <span>Model</span>
+              <input id="modelInput" type="text" autocomplete="off" />
+            </label>
+            <label>
+              <span>Vector store</span>
+              <input id="vectorStoreInput" type="text" autocomplete="off" placeholder="暂时可以留空" />
+            </label>
+            <label>
+              <span>System prompt</span>
+              <textarea id="systemPromptInput" rows="4"></textarea>
+            </label>
+            <button id="saveProfileButton" type="submit">Save user db</button>
+            <p id="profileStatus">local only</p>
+          </form>
+        </details>
+      </section>
+
+      <section class="conversation-head">
+        <p class="eyebrow">content database</p>
+        <h2 id="conversationTitle">loading</h2>
+        <p id="statusLine">idle</p>
+      </section>
+
+      <section id="messageStack" class="message-stack" aria-label="messages"></section>
+
+      <form id="runForm" class="composer">
+        <textarea id="inputBox" rows="4" placeholder="输入 prompt，或者编辑已有 prompt 后切换版本。"></textarea>
+        <button id="runButton" type="submit">Run</button>
+      </form>
+    </main>
+
+    <dialog id="editDialog">
+      <form method="dialog" class="edit-form">
+        <h3>编辑 prompt</h3>
+        <textarea id="editPromptInput" rows="8"></textarea>
+        <div class="dialog-actions">
+          <button id="cancelEditButton" value="cancel" type="submit">Cancel</button>
+          <button id="saveEditButton" value="default" type="button">Save version</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

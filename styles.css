@@ -1,0 +1,266 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f5f2;
+  --surface: #ffffff;
+  --ink: #22251f;
+  --muted: #697065;
+  --line: #dfe4da;
+  --accent: #0f766e;
+  --accent-soft: #e4f3ef;
+  --shadow: 0 10px 24px rgba(30, 39, 34, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  width: min(100%, 860px);
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.topbar,
+.conversation-head,
+.config-panel,
+.composer {
+  padding: 14px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 4px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+#providerLine,
+#statusLine,
+#profileStatus,
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.top-actions,
+.prompt-toolbar,
+.dialog-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button,
+.prompt-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.prompt-icon:disabled {
+  color: #b9beb6;
+}
+
+.config-panel,
+.conversation-head,
+.composer {
+  border-bottom: 1px solid var(--line);
+}
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 10px 12px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.profile-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+label span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  padding: 11px;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+#saveProfileButton,
+#runButton,
+.dialog-actions button {
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  padding: 11px 14px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.message-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+  padding: 14px;
+}
+
+.message {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 13px;
+}
+
+.message.user {
+  background: var(--accent-soft);
+}
+
+.message-meta {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.message-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.56;
+  font-size: 15px;
+}
+
+.prompt-toolbar {
+  justify-content: flex-end;
+  margin-top: 12px;
+  border-top: 1px solid rgba(15, 118, 110, 0.18);
+  padding-top: 10px;
+}
+
+.version-label {
+  min-width: 42px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  background: rgba(244, 245, 242, 0.96);
+}
+
+.composer textarea {
+  min-height: 74px;
+  max-height: 180px;
+}
+
+#runButton:disabled {
+  opacity: 0.55;
+}
+
+dialog {
+  width: min(92vw, 560px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+dialog::backdrop {
+  background: rgba(20, 24, 22, 0.36);
+}
+
+.edit-form {
+  display: grid;
+  gap: 12px;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
+}
+
+#cancelEditButton {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+@media (max-width: 620px) {
+  .composer {
+    grid-template-columns: 1fr;
+  }
+
+  #runButton {
+    width: 100%;
+  }
+}
