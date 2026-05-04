@@ -1,5 +1,13 @@
-# 手机网页临时 MVP
+# ai-call-tool
 
-这是一个暂时的手机网页测试 MVP，先别当正式项目试。
+A tiny experimental browser tool for testing AI API calls.
 
-所有内容库和用户库都会写进浏览器本地存储；导出按钮会导出内容库，并把用户库里的 API key 脱敏。
+## Status
+
+Experimental. Do not use this with real API keys.
+
+This project is a static frontend only. Any API key entered or hardcoded in the page may be visible to the browser and should be treated as public.
+
+## License
+
+MIT
